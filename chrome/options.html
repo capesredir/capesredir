@@ -1,0 +1,185 @@
+<!doctype html>
+<!--
+    This page is shown when the extension button is clicked, because the
+    "browser_action" field in manifest.json contains the "default_popup" key with
+    value "popup.html".
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Redirect CAPES-Periódicos</title>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <!--<script type="text/javascript" async src="bootstrap/js/bootstrap.min.js"></script> -->
+        <link href='options.css' rel='stylesheet' />
+        <link href='/bootstrap/css/bootstrap.min.css' rel='stylesheet' />
+        <link href='bootstrap/css/bootstrap-theme.min.css' rel='stylesheet' />
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="options-GetDomain.js"></script>
+        <script type="text/javascript" src="background-capes-domains.js"></script>
+        <script type="text/javascript" src="options-show-help.js"></script>
+        <script type="text/javascript" src="options-custom-domain.js"></script>
+        <script type="text/javascript" async src="options-config.js"></script>
+        </style>
+    </head>
+    <body class='container'>
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-target='modal' id='modal' aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="carousel" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="" style='height:400px;' src="img/carousel01.png" alt="...">
+                                    <div class="carousel-caption">
+                                        Algumas configurações da CAPES impedem que esta extensão capture o domínio correto de alguns endreços
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="" style='height:400px;
+                                    ' src="img/carousel02.png" alt="...">
+                                    <div class="carousel-caption">
+                                        Portanto, se você deseja colocar o domínio na Blacklist ou Whitelist você precisa pegar o link original do periódico...
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="" style='height:400px;
+                                    ' src="img/carousel03.png" alt="...">
+                                    <div class="carousel-caption">
+                                        ..Ir no menu opções
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="" style='height:400px;
+                                    ' src="img/carousel04.png" alt="...">
+                                    <div class="carousel-caption">
+                                        ...verificar se a url no campo de texto realmente está correta
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="" style='height:400px;
+                                    ' src="img/carousel04.png" alt="...">
+                                    <div class="carousel-caption">
+                                        ...e clicar em rejeitar para impedir que o domínio seja redirecionado ou redirecionar para forçar o redirecionamento
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Ok, Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <p class='row'>&nbsp;<img src="iconP128.png" alt="" width="50" height="50" />&nbsp;<strong>Extens&atilde;o CAPES-Portal de
+            Peri&oacute;dicos [<a
+                                                                       href="http://www.infis.ufu.br/capes-periodicos">p&aacute;gina oficial @
+                                                                       INFIS/UFU</a>]</strong></p>
+        <section class='panel panel-info'>
+            <div class="panel-heading">
+                <h3 class="panel-title">Outras Configurações</h3>
+            </div>
+            <div class='panel-body'>
+                <ul class='col-xs-12 col-sm-offset-1 col-sm-10 domain'></ul>
+                <form class='col-xs-12 col-sm-offset-1 col-sm-10 form'>
+                    <div class='form-group row'>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" id='checkShowMsg' checked> Exibir Notificações
+                            </label>
+                        </div>
+                        <label class="radio-inline">
+                            <input type="radio" name="radioModo" value='false'>Redirecionamento Manual</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="radioModo" value='true'> Redirecionamento Automático</label>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class='panel panel-info'>
+            <div class="panel-heading">
+                <h3 class="panel-title">Domínios</h3>
+            </div>
+            <div class='panel-body'>
+                <p class=' center'>
+                Para adicionar ou bloquear um domínio personalizado ao sistema de redirecionamento automático, navegue para a página desejada e clique com o botão direito do mouse, e siga o menu da extensão.
+                </p>
+                <form class='col-xs-12 col-sm-offset-1 col-sm-10 form'>
+                    <div id="new-domain" class='form-group row'>
+                        <div class='col-xs-8'>
+                            <input type="text" id="domainInput" placeholder='apenas copie o endereço do periódico da barra do seu navegador e cole aqui' class="form-control " name="domainInput" />
+                        </div>
+                        <div class='col-xs-4'>
+                            <input id="adddomainButton" type="button" class="btn btn-success col-xs-5" value="Redirecionar" name="Adddomain" />
+                            <input id="rejectDomainButton" type="button" class="btn btn-info col-xs-5 col-xs-offset-1" value="Rejeitar" name="Adddomain" />
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <input id="removeAlldomainsButton" type="button" class="btn btn-danger" value="Apagar todos os dominios personalizados" name="RemoveAll" />
+                        </div>
+                    </div>
+                </form>
+                <ul style='margin-top:20px' class='col-xs-12
+                col-sm-offset-1
+                col-sm-10 domain' id="domains"></ul>
+            </div>
+        </section>
+        <section class='panel panel-info'>
+            <div class="panel-heading">
+                <h3 class="panel-title">Web of Science</h3>
+            </div>
+            <div class='panel-body'>
+                <p class='text-danger h4 strong'>
+                Só use o redirecionamento automático para o Web of Science caso você
+                não se logue com um usuário no Web of Science
+                </p>
+                <p class='text-info'>
+                Esta extensão não é oficialmente da CAPEs. Portanto, não temos
+                contanto direto com o time de TI da CAPEs, por isso não
+                conseguimos contornar algumas dificuldades de acesso ao sistema
+                da Web of Science. Assim que obtivermos contato esperamos
+                contornar tais dificuldades o mais breve possível.
+
+                </p>
+                <p class=' center'>
+
+                <div class='col-xs-12  '>
+                    <input id="addWebOfScience" type="button" class="btn btn-success " 
+                                                              value="Redirecionar Web of Science" name="Adddomain" />
+                 <input id="removeWebOfScience" type="button" class="btn btn-danger " 
+                                                              value="Não
+                                                              redirecionar Web
+                                                              of Science - Caso
+                                                              você tenha um
+                                                              usuário web of
+                                                              science"
+                                                              name="Adddomain"
+                                                              />
+               
+                </div>
+                </p>
+            </div>
+        </section>
+        <section class='panel panel-info'>
+            <div class="panel-heading">
+                <h3 class="panel-title">Domínios Permanentes</h3>
+            </div>
+            <div class='panel-body'>
+                <p class=' center'>
+                Domínios extraídos automaticamente do Portal de Periódicos CAPES.
+                </p>
+                <ul class='col-xs-12 col-sm-offset-1 col-sm-10 domain' id="ulDomainsCapes"></ul>
+            </div>
+        </section>
+    </body>
+</html>

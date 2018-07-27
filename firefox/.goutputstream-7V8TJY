@@ -1,0 +1,47 @@
+body {
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+}
+.carousel-caption
+{
+    padding: 10px!important;
+font-size:19px;
+    background: rgba(0, 0, 0, .63);
+}
+
+ body {
+  font-family: sans-serif;
+}
+
+a,
+span {
+  padding: 10px;
+}
+.modal-dialog {
+
+}
+
+.modal-content {
+
+}
+
+
+
+
+.seperator {
+  font-weight: bold;
+  color: red;
+}
+
+#headings span {
+  font-family: Arial;
+  font-weight: bold;
+  color: #def;
+  padding: 5px 10px;
+}
+
+
+#headings {
+  background-color: #69F;
+  border-radius: 5px 5px 0 0;
+}

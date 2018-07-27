@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Redirect CAPES-Periódicos</title>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="sobre.js"></script>
+        <link href="sobre.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    </head>
+    <body class="container">
+        <p>
+        <img src="data:image;base64,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"
+             alt="" width="50" height="50" uri="file:///home/gerson/Dropbox/CAPESPeriodicos/v3.3/iconP128.png">
+        <strong>Extensão CAPES-Portal de Periódicos [<a href="http://www.infis.ufu.br/capes-periodicos"> mais informações e contato </a>]</strong>
+        </p>
+        <p><strong>Aviso:</strong></p>
+        <p>Nesta versão ainda manteremos o modo manual como padrão. Para ativar o modo automático, siga as instruções abaixo. Até o momento não recebemos nenhuma reclamação, porém manteremos o modo automático em fase de testes por mais algum tempo.</p>
+        <p><strong>Dúvidas e reclamações:</strong></p>
+        <p>Esta não é uma extensão oficial da CAPES. Estamos a desenvolvendo independentemente a fim de faciliar nosso acesso ao Portal de Periódicos e sistema de acesso remoto CAFe.</p>
+        <p>Caso tenha dúvidas, sugestões ou reclamações sobre o funcionamento da extensão, por favor nos <a href="http://www.infis.ufu.br/capes-periodicos">contate</a>.</p>
+        <p>Dúvidas referentes ao Portal de Periódicos ou sistema remoto CAFe devem ser esclarecidas diretamente com a equipe do Portal de Periódicos da CAPES pelo e-mail <a href="mailto:acessoperiodicos@capes.gov.br">acessoperiodicos@capes.gov.br</a>.</p>
+        <hr>
+        <h2><strong>Instruções</strong></h2>
+        <button id='slideBtn' class='btn btn-info'>Slide com novidades da versão</button>
+        <p><strong>Firefox vs Chrome:</strong></p>
+        <p>Há uma pequena diferença nas implementações nos navegadores Chrome e do Firefox. Por exemplo, no Chrome você pode acessar o menu de opções clicando com o botão direito do mouse tanto no ícone "P", quanto no fundo da página aberta. Já no Firefox, você
+        só pode acessar as opções clicando com o botão direito no fundo da página aberta.</p>
+        <p><strong>Usando o modo manual (padrão):</strong></p>
+        <ol>
+            <li>Se você não estiver na rede da Universidade, deve primeiro acessoar o sistema de acesso remoto CAFe (veja abaixo).</li>
+            <li>Estando na página do periódico que quer acessar, basta clicar no ícone "P" da extensão no canto direito superior do navegador.</li>
+        </ol>
+        <p>Obs: você pode ativar o modo manual a qualquer instante. Por exemplo, ao tentar acessar um PDF, caso receba a menssagem de acesso restrito do Periódico, tente clicar no ícone "P" e o PDF deverá abrir se este Periódico estiver na lista de assinaturas
+        da CAPES.</p>
+        <p><strong>Usando o modo automático:</strong></p>
+        <ol>
+            <li>Para ativar o modo automático, clique com o botão direito (veja Chrome vs Firefox acima) e escolha:
+                <br>
+                <ul>
+                    <li>"Ativar redirecionamento automático", ou</li>
+                    <li>"Desativar redirecionamento automático", para voltar ao modo manual.</li>
+                </ul>
+            </li>
+            <li>Com o modo automático ativado, o navegador irá reconhecer que você está em uma página&nbsp;<em>redirecionável</em> e fará a tradução do endereço automaticamente.
+                <ul>
+                    <li>A lista de domínios de redirecionamento automático pode ser vista na página de Opções (botão direito &gt; Opções).</li>
+                    <li>Os domínios permanentes são aqueles identificados&nbsp;no Portal de Periódicos CAPES.</li>
+                </ul>
+            </li>
+            <li>O modo manual coexiste com o automático, caso você acesse um Periódico e não seja redirecionado automaticamente, clique no botão "P" e o direcionamento manual será executado.
+                <ul>
+                    <li>Em caso de sucesso, o domínio será adicionado à lista de domínios redirecionáveis.</li>
+                    <li>Caso falhe, o domínio será adicionado à lista de domínios não-redirecionáveis.</li>
+                </ul>
+            </li>
+            <li>Você pode adicionar domínios personalizados clicando com o botão direito e escolhendo:
+                <ul>
+                    <li>"Redirecionar este domínio automaticamente", ou</li>
+                    <li>"Nunca redirecionar este domínio automaticamente".</li>
+                    <li>Esta lista pode ser editada nas Opções da extensão.</li>
+                </ul>
+            </li>
+        </ol>
+        <p>&nbsp;<strong>Habilitando/Desabilitando Notificações de Redirecionamento:</strong></p>
+        <ul style="list-style-type: disc;">
+            <li>Notificações são exibidas sempre que uma página é redirecionada.</li>
+            <li>Para habilitar/desabilitar as notificações, clique com o botão direito&nbsp;e acesse as opções</li>
+        </ul>
+        <p><strong>Acessando a rede CAFe para acesso remoto (externo à universidade)</strong></p>
+        <ol>
+            <li>Acesse o <a href="http://www.periodicos.capes.gov.br" target="_blank">Portal de Periódicos</a>&nbsp;da CAPES.</li>
+            <li>No canto superior direito da página, clique em "Meu espaço".</li>
+            <li>Na coluna direita, selecione sua instituição e prossiga para a autenticação.</li>
+            <li>Use seu email e senha institucional, conforme orientações da sua instituição para o acesso ao CAFe.</li>
+            <li>Uma vez autenticado, você passa a ter acesso aos periódicos via Portal da CAPES, ou pela nossa extensão nos modos&nbsp;<strong>manual</strong>&nbsp;ou&nbsp;<strong>automático</strong>.</li>
+        </ol>
+        <hr>
+        <p><strong>Novidades da versão:&nbsp;</strong><a href="http://www.infis.ufu.br/capes-periodicos">veja na página oficial.</a></p>
+        <hr id="false">
+        <p><strong>
+            <br>
+        </strong></p>
+        <ul>
+        </ul>
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-target='modal' id='modal' aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="carousel" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class=""  src="img/sobre01-update.png" alt="..." style="height:600px">
+                                    <div class="carousel-caption">
+                  O redirecionamento automático falha na Web of Science quando usuários tentam logar na conta, e não conseguimos uma boa solução. 					Portanto, decidimos removê-la do modo automático por padrão. 
+<p class='text-left'>
+ Para usar a Web of Science você pode: 
+<ol  class='text-left'>
+
+<li>Fazer login na página inicial, antes do redirecionamento</li>
+<li>Utilizar o redirecionamento manual, clicando no ícone "P" da extensão. </li>
+<li>Abrir o menu de opções e ativar o modo automático para web of science, lembrando que o modo automático pode gerar problemas caso você
+se logue </li>
+</ol>
+</p>
+                                    </div>
+                                </div>
+                              
+                                <div class="item">
+                                    <div style='height:300px'></div>
+                                    <div class="carousel-caption">
+                                        Se você encontar algum problema entre em contanto conosco. 
+                                        <p>gersonjferreira@ufu.br</p>
+                                        <p>devmessias@gmail.com</p>
+                                        <p>
+                                        <small> Obrigado pela atenção.</small>
+                                        </p>
+                                        <p><a href=''></a></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok, Fechar</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>

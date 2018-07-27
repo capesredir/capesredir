@@ -1,0 +1,82 @@
+body
+{
+    font-family: 'Segoe UI', 'Lucida Grande', Tahoma, sans-serif;
+    font-size: 100%;
+}
+body
+{
+    font-family: sans-serif;
+}
+a,
+span
+{
+    padding: 10px;
+}
+ul.domain
+{
+    margin: 0 0 5px 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.domainItem
+{
+    font-family: monospace;
+
+    display: block;
+    display: inline-block;
+    float: left;
+}
+.domainRejectedItem
+{
+    font-family: monospace;
+
+    display: block;
+    display: inline-block;
+    float: left;
+}
+.removedomainRejectedButton
+{
+    display: block;
+    float: left;
+}
+.removedomainButton
+{
+    display: block;
+    float: left;
+}
+.seperator
+{
+    font-weight: bold;
+
+    color: red;
+}
+#headings span
+{
+    font-family: Arial;
+    font-weight: bold;
+
+    padding: 5px 10px;
+
+    color: #def;
+}
+#no-domains
+{
+    padding: 10px;
+
+    color: #666;
+}
+
+
+#headings
+{
+    border-radius: 5px 5px 0 0;
+    background-color: #69f;
+}
+.carousel-caption
+{
+    padding: 10px!important;
+
+    background: rgba(0, 0, 0, .63);
+}

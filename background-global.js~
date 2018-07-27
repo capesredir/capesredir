@@ -1,0 +1,23 @@
+// globais
+function isDefined(test){
+    return JSON.stringify(test) != "{}";
+}
+if (typeof chrome.storage.sync =='undefined')
+    chrome.storage.sync=chrome.storage.local;
+var lastRequestId;
+var domains=[];
+var domainsLocal=[];
+var domainsRejected=['*://physics.aps.org/*'];
+var modoauto = true; // global, modo automatico ou manual
+var showmsg = true; // global, exibe ou nao notificacao
+//var pre = 'http://novo.periodicos.capes.gov.br/?option=com_pezproxy&controller=auth&view=pezproxyauth&url=';
+var pre = 'http://ez314.periodicos.capes.gov.br/login?url=';
+
+var extra = 'ez314.periodicos.capes.gov.br';
+var exceptions=[
+    {
+        from:'http://login.webofknowledge.com',
+        to:'http://apps-webofknowledge.ez34.periodicos.capes.gov.br/',
+    }
+]
+
